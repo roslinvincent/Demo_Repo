@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Details</title>
+</head>
+<body>
+
+    <h2>Author Details</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <td>{{ author.name }}</td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td>{{ author.email }}</td>
+        </tr>
+
+        <tr>
+            <th>Status</th>
+            <td>
+                {% if author.is_active %}
+                    Active
+                {% else %}
+                    Inactive
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <a href="{% url 'author-list' %}">Back to List</a>
+
+    <a href="{% url 'author-edit' author.pk %}">Edit</a>
+
+</body>
+</html>

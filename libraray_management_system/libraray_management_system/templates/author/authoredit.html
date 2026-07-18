@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Author</title>
+</head>
+<body>
+
+<h2>Edit Author</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Update</button>
+
+    <a href="{% url 'author-list' %}">Cancel</a>
+
+</form>
+
+</body>
+</html>
